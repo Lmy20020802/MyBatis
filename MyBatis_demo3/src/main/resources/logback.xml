@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true"> <!-- 指定日志输出的位置 --> <appender name="STDOUT"
+    >
+    class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+        <pattern>[%d{HH:mm:ss.SSS}] [%-5level] [%thread] [%logger]
+            [%msg]%n</pattern>
+    </encoder>
+</appender>
+    <root level="DEBUG">
+        <!-- 指定打印日志的appender，这里通过“STDOUT”引用了前面配置的appender -->
+        <appender-ref ref="STDOUT" />
+    </root>
+    <!-- 根据特殊需求指定局部日志级别 -->
+    <logger name="com.atguigu.crowd.mapper" level="DEBUG"/>
+</configuration>
